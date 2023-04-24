@@ -2,8 +2,8 @@ ticksPerQuarterNote = 128
 tempo = 120
 
 function ms2ticks (durx)
-  local secondsPerBeat = 60.0 / tempo;
-  local ticksPerSecond = ticksPerQuarterNote / secondsPerBeat;
+  local secondsPerBeat = 60.0 / tempo
+  local ticksPerSecond = ticksPerQuarterNote / secondsPerBeat
   return math.floor(durx / 1000.0 * ticksPerSecond)
 end
 
