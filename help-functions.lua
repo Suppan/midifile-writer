@@ -1,5 +1,5 @@
 ticksPerQuarterNote = 128
-tempo = 120
+tempo = 60
 
 function ms2ticks (durx)
   local secondsPerBeat = 60.0 / tempo
