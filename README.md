@@ -4,7 +4,7 @@ simple midi file writer in Lua
 
 ## Why?
 
-Lua is a really fast und lightweight scripting language, a perfect tool for computer-assistend-composition.
+For better understanding of how to write midi messages (Type-0) in Lua
 
 ## Usage
 
