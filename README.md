@@ -1,5 +1,5 @@
 # midifile-writer
-simple midi file writer in Lua
+simple midifile writer in Lua
 
 
 ## Why?
