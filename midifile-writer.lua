@@ -34,7 +34,7 @@ local fileHeader = {
     --0x00, 0x80            -- Time division = 128 (will be filled in later)
   }
  
-local addTimeDivision = write4bit(128)
+local addTimeDivision = write4bit(ticksPerQuarterNote)
 
 for i = 1,#addTimeDivision do 
 	table.insert(fileHeader,addTimeDivision[i]) 
