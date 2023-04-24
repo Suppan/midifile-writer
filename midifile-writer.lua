@@ -1,4 +1,4 @@
-require 'mf-functions'
+require 'help'
 
 local durList = {500,1500,2000} --milliseconds
 local midiList = {60,62,64}
