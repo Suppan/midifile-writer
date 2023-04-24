@@ -79,7 +79,7 @@ for i = 1, #tickList do
 	file:write(string.char("0x"..string.format("9%01x",chanx))) --note ON
 	file:write(string.char("0x"..string.format("%02x",midix)))
 	file:write(string.char("0x"..string.format("%02x",velx)))
-	file:write(string.char(table.unpack(tickList[i])))
+	file:write(string.char(table.unpack(tickList[i])))          --duration ticks      
 	file:write(string.char("0x"..string.format("8%01x",chanx))) --note OFF
 	file:write(string.char("0x"..string.format("%02x",midix)))
 	file:write(string.char("0x"..string.format("%02x",velx)))
