@@ -7,7 +7,7 @@ local velList = {40,40,40}
 local filename = "test.mid"
 
 --===================================================================  	
--- 1. make tickList array and count Totalbytes
+-- 1. make tickList and count Totalbytes
 --===================================================================
 
 local countTotalBytes = 0
