@@ -4,7 +4,7 @@ simple midi file writer in Lua
 
 ## Why?
 
-For better understanding of how to write midi messages (Type-0) in Lua
+Basic code for how to write midi messages (Type-0) in Lua (without an external libraries)
 
 ## Usage
 
