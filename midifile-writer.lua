@@ -16,7 +16,7 @@ local tickList = {}
 for i = 1,#durList do
 	local delta_ticks = ms2ticks(durList[i])
 	local bytes_list  = writeVarLen(delta_ticks)
-	countTotalTicks = countTotalBytes + #bytes_list + 7 --2x3-> (90 3c 28) + 1x (00) delta
+	countTotalBytes = countTotalBytes + #bytes_list + 7 --2x3-> (90 3c 28) + 1x (00) delta
 	table.insert(tickList,bytes_list)
 end
 
