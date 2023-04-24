@@ -14,7 +14,7 @@ enter in terminal:
 ```
 lua mf-writer.lua
 ```
-with given data (all have the same length!) inside the file:
+with given data (all lists have to have the same length!) inside the file:
 
 local durList = {500,1500,2000} --milliseconds  
 local midiList = {60,62,64}  
