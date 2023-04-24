@@ -20,7 +20,7 @@ for i = 1,#durList do
 	table.insert(tickList,bytes_list)
 end
 
-countTotalBytes = countTotalBytes + 3 --plus size endOfTrack
+countTotalBytes = countTotalBytes + 4 --plus size endOfTrack
 
 --===================================================================  	
 -- 2. make file- and trackheaders
