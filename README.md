@@ -20,7 +20,7 @@ local durList = {500,1500,2000} --milliseconds
 local midiList = {60,62,64}  
 local chanList = {1,1,1}  
 local velList = {40,40,40}  
-local filename = "test.mid". 
+local filename = "test.mid" 
 
 result:
 ```
