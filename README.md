@@ -12,7 +12,7 @@ after installing Lua (ie via homebrew: brew install lua)
 
 enter in terminal: 
 ```
-lua mf-writer.lua
+lua midifile-writer.lua
 ```
 with given data (all lists have to have the same length!) inside the file:
 
