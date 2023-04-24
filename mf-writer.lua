@@ -1,6 +1,6 @@
 require 'mf-functions'
 
-local durList = {500,1500,2000}
+local durList = {500,1500,2000} --milliseconds
 local midiList = {60,62,64}
 local chanList = {1,1,1}
 local velList = {40,40,40}
@@ -30,8 +30,8 @@ local fileHeader = {
     0x4D, 0x54, 0x68, 0x64, -- MIDI header
     0x00, 0x00, 0x00, 0x06, -- Chunk size
     0x00, 0x00,             -- MIDI format (type 0)
-    0x00, 0x01--,             -- Number of tracks
-    --0x00, 0x80              -- Time division = 128 (will be filled in later)
+    0x00, 0x01--,           -- Number of tracks
+    --0x00, 0x80            -- Time division = 128 (will be filled in later)
   }
  
 local addTimeDivision = write4bit(128)
