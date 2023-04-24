@@ -1,9 +1,5 @@
 # midifile-writer
 simple midifile writer in Lua
-
-
-## Why?
-
 Basic code for how to write midi messages (type-0) in Lua without external libraries
 
 ## Usage
