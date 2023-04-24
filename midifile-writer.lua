@@ -75,7 +75,6 @@ for i = 1, #tickList do
 	local midix = midiList[i] % 127
 	local chanx = (chanList[i] - 1) % 16
 	local velx = velList[i] % 127
-	
 	file:write(string.char("0x00"))
 	file:write(string.char("0x"..string.format("9%01x",chanx))) --note ON
 	file:write(string.char("0x"..string.format("%02x",midix)))
