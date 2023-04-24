@@ -2,9 +2,9 @@ ticksPerQuarterNote = 128
 tempo = 120
 
 function ms2ticks (durx)
-	local secondsPerBeat = 60.0 / tempo;
-	local ticksPerSecond = ticksPerQuarterNote / secondsPerBeat;
-	return math.floor(durx / 1000.0 * ticksPerSecond)
+  local secondsPerBeat = 60.0 / tempo;
+  local ticksPerSecond = ticksPerQuarterNote / secondsPerBeat;
+  return math.floor(durx / 1000.0 * ticksPerSecond)
 end
 
 function writeVarLen(value)
@@ -20,19 +20,19 @@ function writeVarLen(value)
 end
 
 function write4bit(value)
-	local str = string.format("%04x",value)
-	local arr = {}
-	for i = 1, 4 ,2 do
-		table.insert(arr,"0x"..string.sub(str,i,i+1))
-	end
-	return arr
+  local str = string.format("%04x",value)
+  local arr = {}
+  for i = 1, 4 ,2 do
+    table.insert(arr,"0x"..string.sub(str,i,i+1))
+  end
+  return arr
 end
 
 function write8bit(value)
-	local str = string.format("%08x",value)
-	local arr = {}
-	for i = 1, 8 ,2 do
-		table.insert(arr,"0x"..string.sub(str,i,i+1))
-	end
-	return arr
+  local str = string.format("%08x",value)
+  local arr = {}
+  for i = 1, 8 ,2 do
+    table.insert(arr,"0x"..string.sub(str,i,i+1))
+  end
+  return arr
 end
