@@ -1,4 +1,4 @@
-require 'functions'
+require 'help-functions'
 
 local durList = {500,1500,2000} --milliseconds
 local midiList = {60,62,64}
