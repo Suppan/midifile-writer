@@ -1,6 +1,6 @@
 require 'help-functions'
 
-local durList = {500,1500,2000} --milliseconds
+local durList = {500,1500,2000} -- milliseconds
 local midiList = {60,62,64}
 local chanList = {1,1,1}
 local velList = {40,40,40}
@@ -16,11 +16,11 @@ local tickList = {}
 for i = 1,#durList do
 	local delta_ticks = ms2ticks(durList[i])
 	local bytes_list  = writeVarLen(delta_ticks)
-	countTotalBytes = countTotalBytes + #bytes_list + 7 --2x3-> (90 3c 28) + 1x (00) delta
+	countTotalBytes = countTotalBytes + #bytes_list + 7 -- 2x3-> (90 3c 28) + 1x (00) delta
 	table.insert(tickList,bytes_list)
 end
 
-countTotalBytes = countTotalBytes + 4 --plus size endOfTrack
+countTotalBytes = countTotalBytes + 4 -- plus size endOfTrack
 
 --===================================================================  	
 -- 2. make file- and trackheaders
@@ -76,11 +76,11 @@ for i = 1, #tickList do
 	local chanx = (chanList[i] - 1) % 16
 	local velx = velList[i] % 127
 	file:write(string.char("0x00"))
-	file:write(string.char("0x"..string.format("9%01x",chanx))) --note ON
+	file:write(string.char("0x"..string.format("9%01x",chanx))) -- note ON
 	file:write(string.char("0x"..string.format("%02x",midix)))
 	file:write(string.char("0x"..string.format("%02x",velx)))
-	file:write(string.char(table.unpack(tickList[i])))          --duration      
-	file:write(string.char("0x"..string.format("8%01x",chanx))) --note OFF
+	file:write(string.char(table.unpack(tickList[i])))          -- duration      
+	file:write(string.char("0x"..string.format("8%01x",chanx))) -- note OFF
 	file:write(string.char("0x"..string.format("%02x",midix)))
 	file:write(string.char("0x"..string.format("%02x",velx)))
 end
