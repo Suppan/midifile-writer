@@ -53,7 +53,7 @@ for i = 1,#addChunkSize do
 end
 
 
-local tempoEvent = {0x00, 0xFF, 0x51, 0x03, 0x07, 0xA1, 0x20 --tempo 120 (500000 -> 07a120)
+local tempoEvent = {0x00, 0xFF, 0x51, 0x03, 0x07, 0xA1, 0x20 -- "FF 51" event with fix tempo=120 (500000 -> 07a120 ->len=3)
 	}
 
  -- Define the end of track message
