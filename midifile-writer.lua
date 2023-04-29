@@ -20,7 +20,7 @@ for i = 1,#durList do
 	table.insert(tickList,bytes_list)
 end
 
-countTotalBytes = countTotalBytes + 4 -- plus size endOfTrack
+countTotalBytes = countTotalBytes + 4 + 7 -- + size endOfTrack + size of  tempoEvent
 
 --===================================================================  	
 -- 2. make file- and trackheaders
@@ -52,6 +52,10 @@ for i = 1,#addChunkSize do
 	table.insert(trackHeader,addChunkSize[i])
 end
 
+
+local tempoEvent = {0x00, 0xFF, 0x51, 0x03, 0x07, 0xA1, 0x20 --tempo 120 (500000 -> 07a120)
+	}
+
  -- Define the end of track message
 local endOfTrack = {
     0x00, 0xFF, 0x2F, 0x00  -- last timedelta + End of track message
@@ -69,6 +73,10 @@ end
 
 for i = 1, #trackHeader do
   file:write(string.char(trackHeader[i]))
+end
+
+for i = 1, #tempoEvent do
+  file:write(string.char(tempoEvent[i]))
 end
 
 for i = 1, #tickList do
