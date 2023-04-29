@@ -1,6 +1,5 @@
 smfTempo = 500000 -- = tempo 120 (in microseconds)
 ticksPerQuarterNote = 128
-tempo = 60
 
 function ms2ticks (ms)
   return math.floor(ms * 1000 / (smfTempo / ticksPerQuarterNote))
