@@ -1,10 +1,9 @@
+smfTempo = 500000 -- = tempo 120 (in microseconds)
 ticksPerQuarterNote = 128
 tempo = 60
 
-function ms2ticks (durx)
-  local secondsPerBeat = 60.0 / tempo
-  local ticksPerSecond = ticksPerQuarterNote / secondsPerBeat
-  return math.floor(durx / 1000.0 * ticksPerSecond)
+function ms2ticks (ms)
+  return math.floor(ms * 1000 / (smfTempo / ticksPerQuarterNote))
 end
 
 function writeVarLen(value)
