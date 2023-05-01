@@ -1,11 +1,13 @@
+local mf = {}
+
 smfTempo = 500000 -- = tempo 120 (in microseconds)
 ticksPerQuarterNote = 128
 
-function ms2ticks (ms)
+function mf.ms2ticks (ms)
   return math.floor(ms * 1000 / (smfTempo / ticksPerQuarterNote))
 end
 
-function writeVarLen(value)
+function mf.writeVarLen(value)
   local bytes = {}
   repeat
     table.insert(bytes, 1, value % 128)
@@ -17,7 +19,7 @@ function writeVarLen(value)
   return bytes
 end
 
-function write4bit(value)
+function mf.write4bit(value)
   local str = string.format("%04x",value)
   local arr = {}
   for i = 1, 4 ,2 do
@@ -26,7 +28,7 @@ function write4bit(value)
   return arr
 end
 
-function write8bit(value)
+function mf.write8bit(value)
   local str = string.format("%08x",value)
   local arr = {}
   for i = 1, 8 ,2 do
@@ -34,3 +36,5 @@ function write8bit(value)
   end
   return arr
 end
+
+return mf
