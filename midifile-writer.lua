@@ -1,4 +1,4 @@
-require 'help-functions'
+mf = require 'help-functions'
 
 local durList = {500,1500,2000} -- milliseconds
 local midiList = {60,62,64}
@@ -14,8 +14,8 @@ local countTotalBytes = 0
 local tickList = {}
 
 for i = 1,#durList do
-	local delta_ticks = ms2ticks(durList[i])
-	local bytes_list  = writeVarLen(delta_ticks)
+	local delta_ticks = mf.ms2ticks(durList[i])
+	local bytes_list  = mf.writeVarLen(delta_ticks)
 	countTotalBytes = countTotalBytes + #bytes_list + 7 -- 2x3-> (90 3c 28) + 1x (00) delta
 	table.insert(tickList,bytes_list)
 end
@@ -33,8 +33,8 @@ local fileHeader = {
     0x00, 0x01--,           -- Number of tracks
     --0x00, 0x80            -- Time division = 128 (will be filled in later)
   }
- 
-local addTimeDivision = write4bit(ticksPerQuarterNote)
+
+local addTimeDivision = mf.write4bit(ticksPerQuarterNote)
 
 for i = 1,#addTimeDivision do 
 	table.insert(fileHeader,addTimeDivision[i]) 
@@ -46,7 +46,7 @@ local trackHeader = {
     --0x00, 0x00, 0x00, 0x0D  -- Chunk size=13 (will be filled in later)
   }
 
-local addChunkSize = write8bit(countTotalBytes)
+local addChunkSize = mf.write8bit(countTotalBytes)
 
 for i = 1,#addChunkSize do 
 	table.insert(trackHeader,addChunkSize[i])
