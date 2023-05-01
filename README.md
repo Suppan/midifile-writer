@@ -1,6 +1,10 @@
 # midifile-writer
 simple and basic midifile writer for writing midi messages (type-0) in Lua without external libraries
 
+## Why?
+
+Because of the limitation, it is intended to provide a basic example to understand the structure of midi messages or the basic way to write a midi file from scratch.
+
 ## Usage
 
 after installing Lua (ie via homebrew: brew install lua)
