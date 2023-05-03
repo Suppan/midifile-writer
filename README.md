@@ -3,7 +3,7 @@ simple and basic midifile writer for writing midi messages (type-0) in Lua witho
 
 ## Why?
 
-Because of the limitations of its functionality, this code is intended to provide a basic example to understand the structure of midi messages or the basic way to write a midi file from scratch.
+Because of the limitations of its functionality (no chords or rests), this code is intended to provide a basic example to understand the structure of midi messages or the basic way to write a midi file from scratch.
 
 ## Usage
 
